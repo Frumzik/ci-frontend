@@ -2,7 +2,7 @@ name: CI Frontend
 
 on:
   pull_request:
-  branches: [main]
+    branches: [main]
 
 jobs:
   checks:
@@ -14,7 +14,7 @@ jobs:
 
       - name: Install Node.js
         uses: actions/setup-node@v4
-        width:
+        with:
           node-version: 22
           cache: 'npm'
 
@@ -24,7 +24,7 @@ jobs:
       - name: Run lint
         run: npm run lint
 
-      - name: Ckeck types
+      - name: Check types
         run: npx tsc --noEmit
 
       - name: Build

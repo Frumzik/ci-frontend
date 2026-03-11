@@ -55,4 +55,4 @@ jobs:
             docker pull ghcr.io/${{ needs.build-and-push.outputs.owner }}/ci-frontend:latest
             docker stop ci-frontend || true
             docker rm ci-frontend || true
-            docker run -d --name ci-frontend -p 3000:3000 ghcr.io/${{ needs.build-and-push.outputs.owner }}/ci-frontend:latest
+            docker run -d --name ci-frontend -p 3010:3000 ghcr.io/${{ needs.build-and-push.outputs.owner }}/ci-frontend:latest
